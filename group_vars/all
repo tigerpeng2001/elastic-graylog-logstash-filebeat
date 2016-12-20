@@ -1,0 +1,4 @@
+---
+
+logstashhost: logmanagment.ahanet.net
+logstashport: 5043

@@ -1,0 +1,21 @@
+---
+#  shell: rpm --import https://packages.elastic.co/GPG-KEY-elasticsearch
+- name: download public signing key
+  rpm_key:
+    state: present
+    key: https://packages.elastic.co/GPG-KEY-elasticsearch
+
+- name: add /etc/yum.repos.d/beats.repo
+  copy:
+    src: beats5.repo
+    dest: /etc/yum.repos.d/beats.repo
+
+- name: install filebeat
+  yum: name=filebeat state=latest
+
+- name: Configure filebeat
+  template: src=filebeat.yml.j2 dest=/etc/filebeat/filebeat.yml
+  notify: restart filebeat
+
+- name: start filebeat
+  service: name=filebeat state=started enabled=yes

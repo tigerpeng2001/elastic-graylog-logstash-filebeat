@@ -1,0 +1,7 @@
+---
+
+- name: install filebeat
+  hosts: "{{ hosts|default('localhost') }}"
+  become: yes
+  roles:
+    - filebeat

@@ -1,0 +1,5 @@
+[localhost]
+127.0.0.1 ansible_connection=local
+
+[docker.stage]
+fenew1.stage1 ansible_host=54.162.171.96
