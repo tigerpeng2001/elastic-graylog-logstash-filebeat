@@ -1,26 +1,7 @@
 #=========================== Filebeat prospectors =============================
 
 filebeat.prospectors:
-- input_type: log
-  paths: /mnt/logs/OauthService.log
-  document_type: webapp
-  fields:
-    service: fenew
-    wbeapp: OauthSerive
-    environment: stage
-    containerizeed: yes
-  fields_under_root: true 
 
-#- input_type: log
-#  paths: /mnt/logs/LvSpJSONGateway2.log
-#  document_type: tomcatwebapp
-#  fields:
-#    service: fenew
-#    wbeapp: LvSpJSONGateway2
-#    environment: stage
-#    containerized: yes
-#  fields_under_root: true 
-#
 - input_type: log
   paths: /var/log/messages
   document_type: message
