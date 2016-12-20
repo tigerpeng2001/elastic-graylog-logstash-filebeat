@@ -1,0 +1,1 @@
+# elastic-graylog-logstash-filebeat
